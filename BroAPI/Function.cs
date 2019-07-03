@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Amazon.Lambda.Core;
@@ -14,38 +13,28 @@ namespace BroAPI
 {
     public class Function
     {
-
-        /// <summary>
-        /// A simple function that takes a string and does a ToUpper
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="context"></param>
-        /// <returns></returns>
-
-        public void FunctionHandler( ILambdaContext context)
+        public void FunctionHandler(ILambdaContext context)
         {
-            string json;
-            BroList bros;
+            //get name list
+            GetBroNames();
+            //randomize
+            //return
+
+        }
+
+
+        public BroList GetBroNames()
+        {
             string startupPath = Environment.CurrentDirectory + "\\BroNames.json";
             Console.WriteLine(startupPath);
 
             using (StreamReader r = new StreamReader(startupPath))
             {
-                 json = r.ReadToEnd();
-                 bros = JsonConvert.DeserializeObject<BroList>(json);
+                string json = r.ReadToEnd();
+                BroList bros = JsonConvert.DeserializeObject<BroList>(json);
+                return bros;
             }
         }
-        public class BroName
-        {
-            public string Name { get; set; }
-        }
-
-        public class BroList
-        {
-            public List<string> BroNames { get; set; }
-        }
-
-
 
     }
 }
