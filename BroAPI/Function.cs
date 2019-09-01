@@ -13,12 +13,17 @@ namespace BroAPI
 {
     public class Function
     {
-        public void FunctionHandler(ILambdaContext context)
+        public string FunctionHandler(ILambdaContext context)
         {
             //get name list
-            GetBroNames();
+            var broList = GetBroNames();
+
             //randomize
+            var broCount = (broList.BroNames.Count() - 1);
+            Random rand =  new Random();
+            var index = rand.Next(0, broCount);
             //return
+            return broList.BroNames[index].ToString();
 
         }
 
