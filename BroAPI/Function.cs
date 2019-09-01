@@ -19,9 +19,10 @@ namespace BroAPI
             var broList = GetBroNames();
 
             //randomize
-            var broCount = (broList.BroNames.Count() - 1);
+            Int32 broCount = broList.BroNames.Count();
             Random rand =  new Random();
-            var index = rand.Next(0, broCount);
+            int index = rand.Next(0, broCount);
+
             //return
             return broList.BroNames[index].ToString();
 
@@ -30,7 +31,7 @@ namespace BroAPI
 
         public BroList GetBroNames()
         {
-            string startupPath = Environment.CurrentDirectory + "\\BroNames.json";
+            string startupPath = Environment.CurrentDirectory + "\\names.json";
             Console.WriteLine(startupPath);
 
             using (StreamReader r = new StreamReader(startupPath))
