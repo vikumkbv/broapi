@@ -1,7 +1,7 @@
 # Broapi
 
 ## Description
-Broapi is a simple AWS API power via lambda function to return a broname.
+Broapi is a simple AWS API powered via AWS Lambda Function to return a broname.
 
 ## Contribution
 ### Hacktoberfest 2019
