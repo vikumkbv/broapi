@@ -7,7 +7,7 @@ Broapi is a simple AWS API powered via AWS Lambda Function to return a broname.
 ### Hacktoberfest 2019
 https://hacktoberfest.digitalocean.com/
 
-Please create a branch/fork from master, add bro names to the list, and submit the PR. Label them as BroName and Hacktoberfest too!
+Please create a branch/fork from master, add bro names to the list, and submit the PR.
 
 There are three simple rules:  
 1. Bro names are a play on the original name with bro in it. Not just randomly added into it but creatively integrated. This rule is kind of subjective. Be creative and not lazy.  
